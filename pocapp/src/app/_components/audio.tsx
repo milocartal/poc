@@ -1,4 +1,4 @@
-// components/AudioRecorder.js
+"use client";
 import React, { useState, useRef } from "react";
 
 const AudioRecorder = () => {

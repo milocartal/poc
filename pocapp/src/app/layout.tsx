@@ -6,10 +6,10 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 import { type Metadata } from "next";
 
-const APP_NAME = "PWA Poc App";
-const APP_DEFAULT_TITLE = "My Awesome PWA Poc App";
-const APP_TITLE_TEMPLATE = "%s - PWA App";
-const APP_DESCRIPTION = "PWA POC app";
+const APP_NAME = "Audiolens App";
+const APP_DEFAULT_TITLE = "Audiolens App";
+const APP_TITLE_TEMPLATE = "%s - Audiolens App";
+const APP_DESCRIPTION = "des audios mais que pour les gens de Lens";
 
 export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
