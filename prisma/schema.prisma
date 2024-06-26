@@ -10,11 +10,35 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model Photo {
+    id        String     @id @default(cuid())
+    url       String
+    createdAt DateTime   @default(now())
+    updatedAt DateTime   @updatedAt
+    Response  Response[]
 
-    @@index([name])
+    @@index([id])
+}
+
+model Audio {
+    id        String     @id @default(cuid())
+    url       String
+    duration  Int //secondes
+    createdAt DateTime   @default(now())
+    updatedAt DateTime   @updatedAt
+    Response  Response[]
+
+    @@index([id])
+}
+
+model Response {
+    id String @id @default(cuid())
+
+    photoId String
+    photo   Photo  @relation(fields: [photoId], references: [id])
+
+    audioId String
+    audio   Audio  @relation(fields: [audioId], references: [id])
+
+    createdAt DateTime @default(now())
 }
