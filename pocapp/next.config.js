@@ -4,6 +4,12 @@
  */
 await import("./src/env.js");
 
+import withPWAInit from "next-pwa";
+
+const withPWA = withPWAInit({
+  dest: "public",
+});
+
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
@@ -17,7 +23,6 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  transpilePackages: ["geist"],
 };
 
-export default config;
+export default withPWA(config);
